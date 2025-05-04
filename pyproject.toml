@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "quartzagency"
+version = "0.1.0"
+description = ""
+authors = ["Valg1s <antonsegodin@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^5.2"
+psycopg2 = "^2.9.10"
+gunicorn = "^23.0.0"
+python-dotenv = "^1.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

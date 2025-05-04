@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Data Form{% endblock %}
+
+{% block main %}
+  <main>
+    <section class="form__section" style="background-image: url('{% static 'images/bg.jpg' %}');">
+      
+      <div class="container">
+        
+        <h1 class="title">
+          <p class="fz-22">Find your</p>
+          <span class="box">
+            <span class="column-1">
+              <p class="fz-52">QUARTZ</p>
+              <span class="box">
+                <img src="{% static 'images/star.svg' %}" alt="decorative icon">
+                <img src="{% static 'images/star.svg' %}" alt="decorative icon">
+              </span>
+            </span>
+            <span class="column-2">
+              <p class="fz-22">worker!</p>
+            </span>
+          </span>  
+        </h1>
+
+        <form class="login__form input__form" method="post">
+            {% csrf_token %}
+          <div class="input">
+            <label class="input__label" for="fname">First name</label>
+            <input name="first_name" class="input__field" type="text" placeholder="Anton">
+          </div>
+          <div class="input">
+            <label class="input__label" for="lname">Last name</label>
+            <input name="last_name" class="input__field" type="text" placeholder="Sehodin">
+          </div>
+          <div class="input">
+            <label class="input__label" for="country">Country</label>
+            <input name="country" class="input__field" type="text" placeholder="Poland">
+          </div>
+          <span class="btn-wrapper">
+            <button class="btn fill-btn">
+              Sign Up
+            </button>
+          </span>
+        </form>
+      </div>
+    </section>
+  </main>
+{% endblock %}

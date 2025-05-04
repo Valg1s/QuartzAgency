@@ -1,0 +1,28 @@
+# Exclude virtual environments
+venv/
+.venv/
+
+# Exclude PyCharm project settings
+.idea/
+
+# Exclude Python cache and compiled files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Exclude environment variables and secret settings
+.env
+.env.local
+*.env
+*.env.*
+
+# Exclude build directories
+build/
+dist/
+*.egg-info/
+
+# Exclude logs
+*.log
+
+migrations

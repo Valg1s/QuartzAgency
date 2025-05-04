@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Register{% endblock %}
+
+{% block main %}
+  <main>
+    <section class="form__section" style="background-image: url('{% static 'images/bg.jpg' %}');">
+      
+      <div class="container">
+        
+        <h1 class="title">
+          <p class="fz-22">Become</p>
+          <span class="box">
+            <span class="column-1">
+              <p class="fz-52">QUARTZ</p>
+              <span class="box">
+                <img src="{% static 'images/star.svg' %}" alt="decorative icon">
+                <img src="{% static 'images/star.svg' %}" alt="decorative icon">
+              </span>
+            </span>
+            <span class="column-2">
+              <p class="fz-22">worker!</p>
+            </span>
+          </span>  
+        </h1>
+
+        <form class="register__form input__form" method="post">
+            {% csrf_token %}
+          <div class="input">
+            <label class="input__label" for="email">Email adress</label>
+            <input name="email" class="input__field" type="email" placeholder="example@gmail.com">
+          </div>
+          <div class="input">
+            <label class="input__label" for="phone">Contact</label>
+            <input name="contact" class="input__field" type="number" placeholder="+38(097)0000000">
+          </div>
+          <div class="input">
+            <label class="input__label" for="password">Password</label>
+            <input name="password" class="input__field" type="password" placeholder="********">
+          </div>
+          <div class="input">
+            <label class="input__label" for="confirm__password">Confirm password</label>
+            <input name="confirm_password" class="input__field" type="password" placeholder="********">
+          </div>
+          <div class="radio">
+            <p class="radio__label">Choose profile type</p>
+            <input name="profile_type" type="radio" placeholder="I`m worker" id="worker" value="EMP">
+            <label for="worker">I`m worker</label>
+            <input name="profile_type" type="radio" placeholder="I`m customer" id="customer" value="COM">
+            <label for="customer">I`m customer</label>
+          </div>
+          <span class="btn-wrapper">
+            <button class="btn fill-btn">
+              Sign Up
+            </button>
+            <button class="btn empty-btn">
+              Log In
+            </button>
+          </span>
+        </form>
+      </div>
+    </section>
+  </main>
+{% endblock %}

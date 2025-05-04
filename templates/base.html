@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <header class="header header__login">
+        <div class="container">
+          <div class="header__inner">
+            <a href="#" class="logo">
+              <img src="{% static 'images/logo.svg' %}" alt="logotype" class="logo__img">
+            </a>
+            <nav class="header__nav">
+              <ul class="header__nav-list menu__list">
+                <li class="menu__list-item"><a class="menu__list-link" href="/register/">Sign Up</a></li>
+                <li class="menu__list-item"><a class="menu__list-link" href="#">Find Job</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+    </header>
+    
+    {% block main %}
+    {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Quartz Agency{% endblock %}
+
+{% block main %}
+  <main>
+    <div class="container">
+      <section class="search__box">
+        <div class="search__wrapper">
+          <div class="search">
+            <div class="search__order order">
+              <h2 class="order__title">Title of order</h2>
+              <p class="order__price">100$</p>
+              <p class="order__descr">"But I must explain to you how all this mistaken idea of denouncing pleasure and
+                praising pain was born and I will give you a complete account of the system, and expound the actual
+                teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects..."
+              </p>
+              <p class="order__date">To: 02/03/2025</p>
+            </div>
+            <div class="search__order order">
+              <h2 class="order__title">Title of order</h2>
+              <p class="order__price">100$</p>
+              <p class="order__descr">"But I must explain to you how all this mistaken idea of denouncing pleasure and
+                praising pain was born and I will give you a complete account of the system, and expound the actual
+                teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects..."
+              </p>
+              <p class="order__date">To: 02/03/2025</p>
+            </div>
+            <div class="search__order order">
+              <h2 class="order__title">Title of order</h2>
+              <p class="order__price">100$</p>
+              <p class="order__descr">"But I must explain to you how all this mistaken idea of denouncing pleasure and
+                praising pain was born and I will give you a complete account of the system, and expound the actual
+                teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects..."
+              </p>
+              <p class="order__date">To: 02/03/2025</p>
+            </div>
+            <div class="search__order order">
+              <h2 class="order__title">Title of order</h2>
+              <p class="order__price">100$</p>
+              <p class="order__descr">"But I must explain to you how all this mistaken idea of denouncing pleasure and
+                praising pain was born and I will give you a complete account of the system, and expound the actual
+                teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects..."
+              </p>
+              <p class="order__date">To: 02/03/2025</p>
+            </div>
+            <div class="search__order order">
+              <h2 class="order__title">Title of order</h2>
+              <p class="order__price">100$</p>
+              <p class="order__descr">"But I must explain to you how all this mistaken idea of denouncing pleasure and
+                praising pain was born and I will give you a complete account of the system, and expound the actual
+                teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects..."
+              </p>
+              <p class="order__date">To: 02/03/2025</p>
+            </div>
+            <div class="search__order order">
+              <h2 class="order__title">Title of order</h2>
+              <p class="order__price">100$</p>
+              <p class="order__descr">"But I must explain to you how all this mistaken idea of denouncing pleasure and
+                praising pain was born and I will give you a complete account of the system, and expound the actual
+                teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects..."
+              </p>
+              <p class="order__date">To: 02/03/2025</p>
+            </div>
+          </div>
+          <aside class="search__aside filter">
+            <h2 class="filter__title">
+              Filter
+            </h2>
+            <form class="filter__form" method="get">
+                {% csrf_token %}
+              <div class="price__wrapper">
+                <div class="input filter__input price">
+                  <label class="input__label" for="mnprice">Min price</label>
+                  <input name="min_price" class="input__field" type="number" placeholder="10$">
+                </div>
+                <div class="input filter__input price">
+                  <label class="input__label" for="mxprice">Max price</label>
+                  <input name="max_price" class="input__field" type="number" placeholder="10$">
+                </div>
+              </div>
+              <div class="input filter__input">
+                <label class="input__label" for="category">Category</label>
+                <select name="category" class="input__field" id="category">
+                  <option value="design">Design</option>
+                  <option value="development">Development</option>
+                  <option value="marketing">Marketing</option>
+                  <option value="writing">Writing</option>
+                </select>
+              </div>
+              <div class="input filter__input">
+                <label class="input__label" for="location">Location</label>
+                <select name="country" class="input__field" id="location">
+                  <option value="poland">Poland</option>
+                  <option value="germany">Germany</option>
+                  <option value="ukraine">Ukraine</option>
+                  <option value="france">France</option>
+                  <option value="usa">USA</option>
+                </select>
+              </div>
+              <div class="radio">
+                <p class="radio__label">Type of employment</p>
+                <div>
+                  <input name="type" type="radio" placeholder="Office" id="worker" value="0">
+                  <label for="office">Office</label>
+                </div>
+                <div>
+                  <input name="type" type="radio" placeholder="Remote" id="customer" value="1">
+                  <label for="remote">Remote</label>
+                </div>
+                <div>
+                  <input name="type" type="radio" placeholder="Mix" id="customer" value="2">
+                  <label for="mix">Mix</label>
+                </div>
+              </div>
+              <button class="btn fill-btn">
+                Apply
+              </button>
+            </form>
+          </aside>
+
+        </div>
+        <div class="pagination">
+          <a class="first" href="#">
+            <img src="{% static 'images/firstpage.svg' %}" alt="">
+          </a>
+          <a class="prev" href="#">
+            <img src="{% static 'images/prevpage.svg' %}" alt="">
+          </a>
+          <a class="active-page" href="#">1</a>
+          <a href="#">2</a>
+          <a href="#" class="hidden-page">...</a>
+          <a href="#">7</a>
+          <a class="next" href="#">
+            <img src="{% static 'images/nextpage.svg' %}" alt="">
+          </a>
+          <a class="last" href="#">
+            <img src="{% static 'images/lastpage.svg' %}" alt="">
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+{% endblock %}
