@@ -302,7 +302,7 @@ input[type="radio"] {
   padding-top: 125px;
 }
 
-.header__login .header__inner{
+.header__login.header__inner{
   max-width: 500px;
 }
 
