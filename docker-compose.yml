@@ -1,0 +1,37 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:16
+    container_name: db
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: ${NAME}
+      POSTGRES_USER: ${USER}
+      POSTGRES_PASSWORD: ${PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - .:/app
+    networks:
+      - mynetwork
+
+  web:
+    build: .
+    container_name: web
+    command: gunicorn QuartzAgency.wsgi:application --bind 0.0.0.0:8000 --workers 3
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    env_file:
+      - .env
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge

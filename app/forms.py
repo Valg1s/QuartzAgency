@@ -1,14 +1,16 @@
 from django import forms
 from django.contrib.auth.password_validation import validate_password
 
-
 from .models import CustomUser
+from .validators import CustomEmailValidator
 
 
 class RegistrationUserForm(forms.ModelForm):
     """
     Validation form for user
     """
+    email = forms.EmailField(validators=[CustomEmailValidator()])
+
     class Meta:
         model = CustomUser
         fields = ["email", "contact", "password", "profile_type"]

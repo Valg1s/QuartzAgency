@@ -45,6 +45,12 @@ class BaseView(View):
 
         return wrapper
 
+class SessionStatusView(BaseView):
+    @BaseView.exception
+    def get(self, request):
+        if request.user.is_authenticated:
+            return JsonResponse({'status': 'ok'})
+        return JsonResponse({'status': 'unauthorized'}, status=401)
 
 class LoginView(BaseView):
     @BaseView.exception

@@ -302,8 +302,8 @@ input[type="radio"] {
   padding-top: 125px;
 }
 
-.header__login.header__inner{
-  max-width: 500px;
+.header__inner.header__login{
+  max-width: 500px
 }
 
 .box{

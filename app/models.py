@@ -10,6 +10,12 @@ class TypeOfEmployment(models.TextChoices):
     REMOTE = "remote", "Remote"
     MIX = "mix", "Mix"
 
+class OrderStatus(models.TextChoices):
+    OPENED = "opened", "Opened"
+    ACTIVE = "active", "Active"
+    UPDATED = "updated", "Updated"
+    ARCHIVED = "archived", "Archived"
+
 class CustomUserManager(BaseUserManager):
     """
     This is Custom Manager for Custom User,
@@ -81,6 +87,7 @@ class Order(models.Model):
         max_length=16,
         choices=TypeOfEmployment.choices
     )
+    status = models.CharField(max_length=32, choices=OrderStatus.choices, default=OrderStatus.OPENED)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -103,7 +110,7 @@ class Order(models.Model):
                                     owner=owner, title=title,
                                     description=description,
                                     type_of_employment=type_of_employment,
-                                    category=category, payload=payload
+                                    category=category, payload=payload,
                                     )
 
             order.save()
